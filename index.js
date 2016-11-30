@@ -10,8 +10,8 @@ const geometryStream=new GeometryStream({heightProperty:'heightroof',heightToMet
 const geometryToThreeStream=new GeometryToThreeStream();
 const geometryToLocal=new GeometryToLocal();
 console.log('start')
-shapefile.createReadStream('sample-data/geo_export_272de63e-b230-44b7-a5ff-585fa19ea642.shp')
+shapefile.createReadStream('data/sample.shp')
 .pipe(geometryStream)
 .pipe(geometryToLocal)
 .pipe(geometryToThreeStream)
-.pipe(process.stdout);
+.pipe(logStream);
